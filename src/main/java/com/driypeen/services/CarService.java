@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.Optional;
 
 @Service
 public class CarService {
@@ -21,4 +22,9 @@ public class CarService {
     public Iterable<Car> findAll () {
         return carRepository.findAll();
     }
+
+    public Optional<Car> findById (int id) {
+        return carRepository.findById(id);
+    }
+
 }

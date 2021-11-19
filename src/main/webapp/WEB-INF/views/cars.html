@@ -7,23 +7,28 @@
 </head>
 <body>
 
-<table>
-    <thead>
-        <tr>
-            <th>Manufacturer</th>
-            <th>Model</th>
-            <th>Production year</th>
-            <th>Photos</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr th:each="car : ${cars}">
-            <td th:text="${car.getManufacturer()}">Manufacturer</td>
-            <td th:text="${car.getModel()}">Model</td>
-            <td th:text="${car.getProductionYear()}"></td>
-        </tr>
-    </tbody>
-</table>
+    <table>
+        <thead>
+            <tr>
+                <th>Manufacturer</th>
+                <th>Model</th>
+                <th>Production year</th>
+                <th>Photos</th>
+                <th>More..</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="car : ${cars}">
+                <td th:text="${car.getManufacturer()}">Manufacturer</td>
+                <td th:text="${car.getModel()}">Model</td>
+                <td th:text="${car.getProductionYear()}"></td>
+                <td>link</td>
+                <td>
+                    <a th:href="@{/cars/{id}(id=${car.getCarId()})}">Show more</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 </html>

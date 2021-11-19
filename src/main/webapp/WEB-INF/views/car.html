@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Cars</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th>Manufacturer</th>
+        <th>Model</th>
+        <th>Production year</th>
+        <th>Cost per day</th>
+        <th>Cost per hour</th>
+        <th>Status</th>
+        <th>Description</th>
+        <th>Photos</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${car.getManufacturer()}">Manufacturer</td>
+        <td th:text="${car.getModel()}">Model</td>
+        <td th:text="${car.getProductionYear()}">Model</td>
+        <td th:text="${car.getCostPerDay()}"></td>
+        <td th:text="${car.getCostPerHour()}"></td>
+        <td th:text="${car.getStatus()}"></td>
+        <td th:text="${car.getDescription()}"></td>
+        <td th:text="${car.getPhotos()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
