@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface CarRepository extends CrudRepository<Car, Integer> {
+public interface CarRepository extends CrudRepository<Car, Long> {
     Iterable<Car> findAll();
-
-    Optional<Car> findById (Integer id);
+    Optional<Car> findByCarId (Integer id);
 }

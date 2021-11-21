@@ -23,8 +23,8 @@ public class CarService {
         return carRepository.findAll();
     }
 
-    public Optional<Car> findById (int id) {
-        return carRepository.findById(id);
+    public Optional<Car> findByCarId (int id) {
+        return carRepository.findByCarId(id);
     }
 
 }

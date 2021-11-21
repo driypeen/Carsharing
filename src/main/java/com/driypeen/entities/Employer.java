@@ -3,6 +3,7 @@ package com.driypeen.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -17,4 +18,7 @@ public class Employer {
     private String patronymic;
     private Double salary;
     private String phoneNumber;
+
+    @OneToMany(mappedBy = "employer", fetch = FetchType.EAGER)
+    private List<Contract> contracts;
 }

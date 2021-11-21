@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>All contracts</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th>Car model</th>
+        <th>Client name</th>
+        <th>More</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="contract : ${contracts}">
+        <td th:text="${contract.getCar().getModel()}"></td>
+        <td th:text="${contract.getClient().getName()}"></td>
+        <td>
+            <a th:href="@{/contracts/{id}(id=${contract.getContractId()})}">Show more</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
